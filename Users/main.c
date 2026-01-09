@@ -20,21 +20,20 @@ void JumpToApp(uint32_t app_address)
 	}
 }
 
-
 int main(void)
 {
-  //HAL_Init();                                                 /* ³õÊ¼»¯HAL¿â */
+  //HAL_Init();                                                 /* ï¿½ï¿½Ê¼ï¿½ï¿½HALï¿½ï¿½ */
 
   NVIC_Configuration();
 
 	while(1)
 	{
-		if(ReadFlashTest(UPFLAGADDR) == 0x55555555)  //Éý¼¶±êÖ¾
+		if(ReadFlashTest(UPFLAGADDR) == 0x55555555)  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 		{
-				update_firmware(APP1ADDR,APP2ADDR);//¹Ì¼þÉý¼¶²Ù×÷
-				EarseFlash_1K(UPFLAGADDR);//²Á³ýÉý¼¶±êÖ¾Î»
-				WriteFlash(UPFLAGADDR,nbuff_AAAA,4);//Ð´ÈëAAAAAAAA
-				NVIC_SystemReset();//ÏµÍ³¸´Î»
+				update_firmware(APP1ADDR,APP2ADDR);//ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				EarseFlash_1K(UPFLAGADDR);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾Î»
+				WriteFlash(UPFLAGADDR,nbuff_AAAA,4);//Ð´ï¿½ï¿½AAAAAAAA
+				NVIC_SystemReset();//ÏµÍ³ï¿½ï¿½Î»
 		}
 		else 
 		{
